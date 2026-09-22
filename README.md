@@ -4,6 +4,12 @@ A small, interactive learning project about evaluating AI-style support answers 
 
 The project was created with **AI-assisted development using OpenAI Codex**. It is a new portfolio learning exercise, not a claim of previous AI engineering employment or production AI deployment.
 
+**[Open the interactive demo](https://rainbowmoko.github.io/ai-answer-evaluation-lab/)** · [View the source](https://github.com/RainbowMoko/ai-answer-evaluation-lab)
+
+The hosted version is a static website. Answer evaluation runs in your browser, with no model API, account or backend required.
+
+![Desktop view of the AI Answer Evaluation Lab](screenshots/desktop.png)
+
 ## Try it locally
 
 Requirements: Node.js 20 or later. There are no third-party dependencies and no installation step.
