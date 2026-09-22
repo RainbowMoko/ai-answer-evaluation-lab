@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="An interactive, offline learning project for evaluating illustrative AI answers against synthetic evidence.">
+  <title>AI Answer Evaluation Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="AI Answer Evaluation Lab home"><span class="brand-mark" aria-hidden="true">a<span>e</span></span><span>ANSWER / EVAL<span class="brand-sub">An AI learning project</span></span></a>
+      <span class="offline-pill"><span aria-hidden="true"></span> Offline by design</span>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div><p class="eyebrow">SMALL DATASET. VISIBLE RULES. BETTER QUESTIONS.</p><h1 id="page-title">Test the answer.<br><span>Show the evidence.</span></h1><p class="intro">Explore how an answer can sound convincing and still go beyond its sources. Edit an example, run the checks, and inspect every result.</p></div>
+        <div class="hero-note"><span class="small-label">THE EXPERIMENT</span><p>Can a few explicit checks help us spot a weak support answer?</p><div class="hero-stats"><span><strong>03</strong>synthetic cases</span><span><strong>00</strong>API calls</span></div></div>
+      </section>
+      <div class="workspace">
+        <aside class="case-rail" aria-label="Choose an evaluation case"><div class="rail-heading"><span class="small-label">TEST CASES</span><span>01—03</span></div><div id="case-list"></div><div class="rail-note"><span class="spark" aria-hidden="true">↗</span><p>Learning by making the evaluation visible.</p><small>All products, policies and answers are illustrative.</small></div></aside>
+        <div class="experiment">
+          <section class="case-heading" aria-labelledby="case-title"><span class="eyebrow" id="case-category"></span><h2 id="case-title"></h2><p id="case-lesson"></p></section>
+          <div class="editor-grid">
+            <section class="panel answer-panel" aria-labelledby="answer-heading">
+              <div class="panel-heading"><h3 id="answer-heading">The answer</h3><span class="tag">EDITABLE FIXTURE</span></div>
+              <div class="question-box"><span class="small-label">CUSTOMER QUESTION</span><p id="question"></p></div>
+              <div class="fixture-controls" aria-label="Load an illustrative answer"><button type="button" id="grounded-fixture" class="fixture-button" aria-pressed="true">Grounded example</button><button type="button" id="risky-fixture" class="fixture-button" aria-pressed="false">Risky example</button><button type="button" id="clear-answer" class="text-button">Clear</button></div>
+              <label for="answer" class="small-label answer-label">YOUR ANSWER</label>
+              <textarea id="answer" maxlength="10000" spellcheck="false" aria-describedby="answer-help"></textarea>
+              <div class="editor-meta"><span id="answer-help">Try changing a number or adding a promise.</span><span id="char-count">0 / 10,000</span></div>
+              <button type="button" class="primary-button" id="run-checks">Run checks <span aria-hidden="true">↗</span></button>
+            </section>
+            <section class="panel evidence-panel" aria-labelledby="evidence-heading"><div class="panel-heading"><h3 id="evidence-heading">The evidence</h3><span class="tag">SYNTHETIC</span></div><div id="documents"></div><div class="expectation"><span class="small-label">EXPECTED BEHAVIOUR</span><p id="expected-behavior"></p></div><details class="rules-details"><summary>Inspect the exact matching rules</summary><p>These regular expressions recognise selected phrases only. Wording outside these patterns may be missed.</p><pre id="rule-source"></pre></details></section>
+          </div>
+          <section class="panel results-panel" aria-labelledby="results-heading">
+            <div class="panel-heading"><h3 id="results-heading">Evaluation report</h3><button type="button" id="export-report" class="secondary-button">Export JSON <span aria-hidden="true">↓</span></button></div>
+            <div id="report" aria-live="polite" aria-atomic="true"></div>
+            <details class="score-details"><summary>How is the score calculated?</summary><p>Required phrase checks contribute up to 75 points. A recognised source identifier with no unknown identifiers adds 25 points. Each flagged claim or unknown source identifier subtracts 25 points, with a floor of zero. An empty answer always scores zero.</p></details>
+            <p class="limitation"><strong>A passed check is a starting point.</strong> This demo checks selected patterns and source IDs. It does not understand meaning, verify every claim, or establish safety. Human review is still needed.</p>
+          </section>
+        </div>
+      </div>
+      <section class="learning-note"><span class="small-label">WHY BUILD THIS?</span><p>Using AI well includes checking its output. This small project explores evidence, uncertainty and repeatable evaluation—with no model or account required.</p><span class="tag">AI-ASSISTED DEVELOPMENT WITH CODEX</span></section>
+    </main>
+    <footer><span>AI Answer Evaluation Lab · Portfolio learning demo</span><span>No live model · No analytics · No external services</span></footer>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

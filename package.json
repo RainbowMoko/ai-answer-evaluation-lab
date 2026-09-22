@@ -1,0 +1,13 @@
+{
+  "name": "ai-answer-evaluation-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "An offline, transparent evaluation lab for illustrative AI support answers.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=20" },
+  "license": "MIT"
+}
